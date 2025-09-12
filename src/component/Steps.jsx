@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../App.css'
-
+import StepMessage from './Stepmessage'
+import Button from './Button'
 
 
 
@@ -38,19 +39,37 @@ function Step() {
         </div>
 
 
-        <p className='message'>
+        <StepMessage step={step}>
+          
+
+          {messages[step - 1]}
+          <div className="buttons">
+            <Button
+            bgColor="#e7e7e7"
+            textColor="#333"
+            onClick={() => alert(`learn how to ${messages[step - 1]}` )}>
+              Learn How
+            </Button>
+          </div>
+        </StepMessage>
+
+
+        {/* <p className='message'>
         Step {step}: {messages[step - 1]} 
-      </p>
+      </p> */}
 
       <div className="buttons">
-        <button style={{ backgroundColor: '#795DF2', color: '#fff'}}
+        <Button bgColor = '#795DF2' textColor = '#fff'
         onClick={handlePrevious}>
+          <span>👈</span>
           Previous
-        </button>
-        <button style={{ backgroundColor: '#795DF2', color: '#fff'}}
+        </Button>
+        <Button bgColor = '#795DF2' textColor = '#fff'
         onClick={handleNext}>
+          <span>👉</span>
+          <span>🤓</span>
           Next
-          </button>
+          </Button>
       </div>
 
 
