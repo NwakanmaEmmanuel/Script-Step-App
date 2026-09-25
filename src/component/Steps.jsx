@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../App.css'
-import StepMessage from './Stepmessage'
+import StepMessage from './StepMessage'
 import Button from './Button'
 
 
